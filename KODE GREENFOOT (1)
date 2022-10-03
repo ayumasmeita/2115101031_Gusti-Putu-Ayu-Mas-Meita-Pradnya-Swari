@@ -1,0 +1,12 @@
+"Kode menambahkan animasi menjadi 2"
+Fish fish = new Fish();
+        addObject(fish,54,204);
+        
+        Fish fish1 = new Fish();
+        addObject(fish1,54,204);
+        
+"kode membuat animasi berjalan kedepan dan kembali lagi keawal"
+move(5);
+        
+        if (getX()==599)
+            setLocation(0,getY());
