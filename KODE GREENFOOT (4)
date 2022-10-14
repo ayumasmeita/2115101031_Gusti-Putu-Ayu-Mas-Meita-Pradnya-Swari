@@ -1,0 +1,10 @@
+public void act()
+    {
+        move(speed);
+
+        World w = getWorld();
+        if(isAtEdge())
+        {
+            getWorld().removeObject(this);
+        }
+    }
