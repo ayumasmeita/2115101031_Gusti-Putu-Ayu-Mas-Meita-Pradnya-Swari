@@ -1,0 +1,41 @@
+//KODE PADA LEDAKAN//
+
+public void act()
+    {
+        turn(2);
+        ledakan();
+    }
+    
+    int ledakanTimer = 0;
+    public void ledakan(){
+        if (ledakanTimer==60){
+            getWorld().removeObject(this);
+        }else{
+            ledakanTimer++;
+        }
+    }
+    
+    //KODE PADA LASER//
+    
+    public void act()
+    {
+        move(8);
+        
+        laserCollision();
+
+    }
+    
+    public void laserCollision(){
+        if (isTouching(Enemy.class)){
+            
+            getWorld().addObject(
+                new Ledakan(),
+                getX(),
+                getY()
+            );
+            
+            removeTouching(Enemy.class);
+            getWorld().removeObject(this);
+        }else if (isAtEdge())
+            getWorld().removeObject(this);
+    }
