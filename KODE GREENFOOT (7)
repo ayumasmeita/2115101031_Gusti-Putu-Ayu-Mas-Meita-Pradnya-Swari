@@ -1,0 +1,17 @@
+//KODE PADA LASER//
+
+public void act()
+    {
+        move(8);
+        
+        laserCollision();
+
+    }
+    
+    public void laserCollision(){
+        if (isTouching(Enemy.class)){
+            removeTouching(Enemy.class);
+            getWorld().removeObject(this);
+        }else if (isAtEdge())
+            getWorld().removeObject(this);
+    }
