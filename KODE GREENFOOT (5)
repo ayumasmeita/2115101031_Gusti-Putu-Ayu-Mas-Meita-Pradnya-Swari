@@ -1,0 +1,14 @@
+    public void act(){
+        spawnEnemy();
+    }
+    
+    public int timerEnemy =  0;
+    public void spawnEnemy(){
+        if (timerEnemy==180) {//jika timer=5 detik
+            //Enemy enemy = new Enemy();
+            addObject(new Enemy(), 599, Greenfoot.getRandomNumber(400));
+            timerEnemy = 0;
+        }else{
+            timerEnemy++;
+        }
+    }
