@@ -1,0 +1,25 @@
+//KODE PADA HERO//
+
+int laserTimer = 0;
+    public void shootLaser(){
+        if (laserTimer == 30){
+            getWorld().addObject(
+                new Laser(),
+                getX() + 5,
+                getY()
+            );
+            
+            laserTimer =  0;
+        }else{
+            laserTimer++;
+        }
+    }
+    
+    //KODE PADA LASER//
+    
+    public void act()
+    {
+        move(8);
+        if (isAtEdge())
+            getWorld().removeObject(this);
+    }
