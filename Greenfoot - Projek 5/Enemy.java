@@ -33,5 +33,10 @@ public class Enemy extends Actor
             setLocation(590,getY());
         }
     }
+    public void hilang ()
+    {
+        if (isAtEdge())
+            getWorld().removeObject(this);
+    }
     
 }
